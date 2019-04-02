@@ -1,0 +1,19 @@
+
+{% extends "user.html" %}
+
+{% block title %}
+    Лента
+{% endblock %}
+
+{% block user_content %}
+        {% for new in news %}
+        <div class="card" style="width: 50%; margin-left: auto; margin-right: auto; margin-top: 1%;">
+          <div class="card-body">
+              <h5 class="card-title">{{ new[1] }}</h5>
+              <p class="card-text">{{ new[2] }}</p>
+              <a href="/delete_news/{{ new[0] }}" class="card-link">Удалить</a>
+              <!--<a href="/" class="card-link">Изменить</a>-->
+          </div>
+        </div>
+        {% endfor %}
+{% endblock %}

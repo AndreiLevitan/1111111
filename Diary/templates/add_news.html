@@ -1,0 +1,31 @@
+{% extends "user.html" %}
+ 
+{% block user_content %}
+    <div class="card" style="width: 50%; margin-left: auto; margin-right: auto; margin-top: 1%;">
+      <div class="card-body">
+        <h5 class="card-title">Добавление новости</h5>
+        <form action="" method="post" novalidate>
+            {{ form.hidden_tag() }}
+            <p class="card-text">
+                {{ form.title.label }}<br>
+                {{ form.title }}<br>
+                {% for error in form.title.errors %}
+                    <div class="alert alert-danger" role="alert">
+                        {{ error }}
+                    </div>
+                {% endfor %}
+            </p>
+            <p class="card-text">
+                {{ form.content.label }}<br>
+                {{ form.content }}<br>
+                {% for error in form.content.errors %}
+                    <div class="alert alert-danger" role="alert">
+                        {{ error }}
+                    </div>
+                {% endfor %}
+            </p>
+            <p class="card-text">{{ form.submit() }}</p>
+        </form>
+      </div>
+    </div>
+{% endblock %}

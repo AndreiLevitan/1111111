@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <ul class="nav justify-content-end" style="background-color: white">
+      <li class="nav-item">
+        <a class="nav-link active" href="/add_news">Добавить новость</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="/logout">Выйти</a>
+      </li>
+      <!--<li class="nav-item">-->
+        <!--<a class="nav-link" href="#">Link</a>-->
+      <!--</li>-->
+      <!--<li class="nav-item">-->
+        <!--<a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>-->
+      <!--</li>-->
+    </ul>
+    {% block user_content %}
+
+    {% endblock %}
+{% endblock %}
